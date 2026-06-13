@@ -13,6 +13,13 @@ Imagine running a high-volume e-commerce operation, selling electronics on multi
 
 Every week, your overseas suppliers send you a new product catalog. But there's a catch: it's a massive, 30-page PDF document. 
 
+<p align="center">
+  <img src="./images/catalogo-exemplo.png" width="1000" alt="n8n Workflow" />
+  <br>
+  <sub><em>Product Sheet</em></sub>
+</p>
+
+
 To place an order, you have to manually:
 1. Scroll through hundreds of items visually.
 2. Spot which products are "out of stock" (often indicated only by a visual watermark over the image).
@@ -41,7 +48,7 @@ By keeping the autonomous "Radar Mode" active 24/7 and automating the catalog OC
 CataPedido acts as a simplified ERP operated 100% via Telegram, focused on preventing losses and accelerating decision-making in E-commerce. Its functions are divided into 4 main pillars:
 
 ### 📦 1. Catalog Intelligence (OCR & Pricing)
-*   **GPT-4 Vision Extraction:** Reads Chinese supplier PDFs and converts complex images (including "out of stock" stamps and crossed-out prices) into structured data.
+*   **GPT-4 Vision Extraction:** Reads supplier PDFs and converts complex images (including "out of stock" stamps and crossed-out prices) into structured data.
 *   **Dynamic Pricing:** Instantly calculates the minimum selling price by combining the supplier's cost with the specific commission rates and taxes of each platform (Mercado Livre, Shopee, etc.).
 *   **Opportunity Ranking:** Generates reports highlighting SKUs with the highest discount % and the best Return on Investment (ROI).
 
