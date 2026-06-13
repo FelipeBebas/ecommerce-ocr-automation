@@ -8,7 +8,7 @@
 An automated AI workflow built with n8n to process complex PDF catalogs using GPT-4 Vision/OCR, extract unstructured data into CSV, and calculate dynamic B2B e-commerce margins via Telegram.
 
 <p align="center">
-  <img src="./images/fluxo-n8n.png" width="1000" alt="n8n Workflow" />
+  <img src="./images/fluxo-n8n.jpeg" width="1000" alt="n8n Workflow" />
   <br>
   <sub><em>n8n Workflow</em></sub>
 </p>
