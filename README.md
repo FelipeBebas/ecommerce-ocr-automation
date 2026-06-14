@@ -67,7 +67,7 @@ CataPedido acts as a simplified ERP operated 100% via Telegram, focused on preve
 <p align="center">
   <img src="./images/demo-catapedido.gif" width="360" alt="CataPedido on Telegram" />
   <br>
-  <sub><em>Product Sheet</em></sub>
+  <sub><em>CataPedido on Telegram</em></sub>
 </p>
 
 ---
