@@ -7,11 +7,23 @@
 
 An automated AI workflow built with n8n to process complex PDF catalogs using GPT-4 Vision/OCR, extract unstructured data into CSV, and calculate dynamic B2B e-commerce margins via Telegram.
 
+<p align="center">
+  <img src="./images/fluxo-n8n.jpeg" width="1000" alt="n8n Workflow" />
+  <br>
+  <sub><em>n8n Workflow</em></sub>
+</p>
+
 ## 📖 The Story & The Problem
 
 Imagine running a high-volume e-commerce operation, selling electronics on multiple marketplaces like Mercado Livre and Shopee. Your success depends on buying the right products at the right time.
 
-Every week, your overseas suppliers send you a new product catalog. But there's a catch: it's a massive, 30-page PDF document. 
+Every week, your overseas suppliers send you a new product catalog. But there's a catch: it's a 30-page PDF document. 
+
+<p align="center">
+  <img src="./images/catalogo-exemplo.png" width="1000" alt="n8n Workflow" />
+  <br>
+  <sub><em>Product Sheet</em></sub>
+</p>
 
 To place an order, you have to manually:
 1. Scroll through hundreds of items visually.
@@ -20,19 +32,9 @@ To place an order, you have to manually:
 4. Open a spreadsheet to calculate complex margins, factoring in the specific commission fees, taxes, and shipping costs of *each* marketplace you sell on.
 5. Manually type a WhatsApp message to the supplier formatting your entire order.
 
-This process takes hours, is highly prone to human error, and delays purchasing decisions—meaning by the time you figure out what's profitable, the supplier might have already run out of stock.
+This process takes hours, is highly prone to human error, and delays purchasing decisions meaning by the time you figure out what's profitable, the supplier might have already run out of stock.
 
 **The Solution?** An automated n8n workflow that uses GPT-4 Vision to "read" the PDF, extract structured data, calculate margins instantly via Google Sheets, and serve everything through an interactive Telegram Bot.
-
----
-
-## 📈 Business Impact & ROI
-
-By keeping the autonomous "Radar Mode" active 24/7 and automating the catalog OCR extraction, this architecture delivers measurable business results:
-
-*   **Time-to-Market:** Reduced the catalog analysis and purchasing decision process from **4 hours to under 3 minutes**. Fast purchasing ensures the store secures high-demand inventory before suppliers run out of stock.
-*   **100% Loss Prevention:** The proactive Margin Radar eliminates human error in pricing. If a marketplace changes its fee structure, the bot immediately flags any active ads running with negative margins, saving thousands of dollars in hidden losses.
-*   **Zero Downtime:** Automated stockout alerts ("Emergency Pause") prevent platform penalties on Mercado Livre and Shopee by instantly pausing ads the moment physical stock hits zero.
 
 ---
 
@@ -41,7 +43,7 @@ By keeping the autonomous "Radar Mode" active 24/7 and automating the catalog OC
 CataPedido acts as a simplified ERP operated 100% via Telegram, focused on preventing losses and accelerating decision-making in E-commerce. Its functions are divided into 4 main pillars:
 
 ### 📦 1. Catalog Intelligence (OCR & Pricing)
-*   **GPT-4 Vision Extraction:** Reads Chinese supplier PDFs and converts complex images (including "out of stock" stamps and crossed-out prices) into structured data.
+*   **GPT-4 Vision Extraction:** Reads supplier PDFs and converts complex images (including "out of stock" stamps and crossed-out prices) into structured data.
 *   **Dynamic Pricing:** Instantly calculates the minimum selling price by combining the supplier's cost with the specific commission rates and taxes of each platform (Mercado Livre, Shopee, etc.).
 *   **Opportunity Ranking:** Generates reports highlighting SKUs with the highest discount % and the best Return on Investment (ROI).
 
@@ -60,6 +62,17 @@ A proactive logic layer that cross-references physical inventory with online ads
 *   **Integration Audit:** Cross-references databases to find products that have physical stock but were forgotten and are not advertised online.
 *   **Paused with Stock:** Finds ads that are paused (e.g., due to a past stockout), cross-references them with the current balance, and provides a button to *Reactivate All*.
 *   **Block Filters:** Lists ads that have suffered violations, errors, or platform blocks.
+
+---
+
+## 📈 Business Impact & ROI
+
+By keeping the autonomous "Radar Mode" active 24/7 and automating the catalog OCR extraction, this architecture delivers measurable business results:
+
+*   **Time-to-Market:** Reduced the catalog analysis and purchasing decision process from **4 hours to under 3 minutes**. Fast purchasing ensures the store secures high-demand inventory before suppliers run out of stock.
+*   **100% Loss Prevention:** The proactive Margin Radar eliminates human error in pricing. If a marketplace changes its fee structure, the bot immediately flags any active ads running with negative margins, saving thousands of dollars in hidden losses.
+*   **Zero Downtime:** Automated stockout alerts ("Emergency Pause") prevent platform penalties on Mercado Livre and Shopee by instantly pausing ads the moment physical stock hits zero.
+
 
 ---
 
@@ -156,26 +169,26 @@ By feeding a catalog page to this prompt, the AI accurately parses the visual la
 
 ```csv
 cod,desc,cor,qtd,p_orig,p_at,desc_pct,cat,esgo,mix
-AC-101,CASE SSD/HDD 2.5" USB 3.0,,,"49.90","49.90",0,CASE,FALSE,
-AC-102,CASE SSD/HDD 2.5" USB 3.0,,,"49.90","49.90",0,CASE,TRUE,
-AC-103,CASE HD 3.5" SATA/USB 3.0,,,"69.90","69.90",0,CASE,FALSE,
-AC-104,CASE HD 3.5" SATA/USB 3.0,,,"69.90","69.90",0,CASE,TRUE,
-AC-201,HUB USB 4 PORTAS 2.0,,,"19.90","19.90",0,HUB,FALSE,
-AC-202,HUB USB 4 PORTAS 2.0,BRANCO,,"24.90","24.90",0,HUB,FALSE,
-AC-203,HUB USB 4 PORTAS 3.0,,,"39.90","39.90",0,HUB,TRUE,
-AC-204,ADAPTADOR USB 3.0 RJ45,,,"59.90","59.90",0,ADAPTADOR,FALSE,
-AC-301,CABO USB 2.0 MICRO USB,PRETO,,"9.90","9.90",0,CABO,FALSE,
-AC-302,CABO USB 2.0 TIPO C,PRETO,,"12.90","12.90",0,CABO,FALSE,
-AC-303,CABO USB 3.0 TIPO C,AZUL,,"19.90","19.90",0,CABO,FALSE,
-AC-304,CABO HDMI FULL HD 1.4,PRETO,,"15.90","15.90",0,CABO,FALSE,
-MO-101,MOUSE ÓPTICO USB,PRETO,,"19.90","19.90",0,MOUSE,FALSE,
-MO-102,MOUSE SEM FIO 2.4G,PRETO,,"29.90","29.90",0,MOUSE,FALSE,
-MO-103,MOUSE GAMER USB,PRETO,,"89.90","89.90",0,MOUSE,TRUE,
-MO-104,MOUSE SEM FIO RECARREGÁVEL,PRETO,,"49.90","49.90",0,MOUSE,FALSE,
-TC-101,TECLADO USB PADRÃO ABNT2,PRETO,,"39.90","39.90",0,TECLADO,FALSE,
-TC-102,TECLADO GAMER LED RGB,PRETO,,"99.90","99.90",0,TECLADO,TRUE,
-FO-101,FONE DE OUVIDO COM MICROFONE,PRETO,,"39.90","39.90",0,FONE,FALSE,
-AC-401,MOUSE PAD BÁSICO,PRETO,,"9.90","9.90",0,MOUSE PAD,FALSE,
+AC-101,CASE SSD/HDD 2.5" USB 3.0,,240,"159.90","128.90",19,CASE,FALSE,PRETO:80|CINZA:80|AZUL:80
+AC-102,CASE SSD/HDD 2.5" USB 3.0,,200,"119.90","119.90",0,CASE,TRUE,PRETO:67|CINZA:67|AZUL:66
+AC-103,CASE HD 3.5" SATA/USB 3.0,,180,"189.90","189.90",0,CASE,FALSE,
+AC-104,CASE HD 3.5" SATA/USB 3.0,,150,"179.90","179.90",0,CASE,TRUE,
+AC-201,HUB USB 4 PORTAS 2.0,,300,"119.90","89.90",25,HUB,FALSE,
+AC-202,HUB USB 4 PORTAS 2.0,BRANCO,250,"129.90","99.90",23,HUB,FALSE,
+AC-203,HUB USB 4 PORTAS 3.0,,200,"149.90","149.90",0,HUB,TRUE,
+AC-204,ADAPTADOR USB 3.0 RJ45,,180,"159.90","159.90",0,ADAPTADOR,FALSE,
+AC-301,CABO USB 2.0 MICRO USB,PRETO,500,"59.90","49.90",17,CABO,FALSE,
+AC-302,CABO USB 2.0 TIPO C,PRETO,400,"59.90","59.90",0,CABO,FALSE,
+AC-303,CABO USB 3.0 TIPO C,AZUL,350,"89.90","69.90",22,CABO,FALSE,
+AC-304,CABO HDMI FULL HD 1.4,PRETO,280,"79.90","79.90",0,CABO,FALSE,
+MO-101,MOUSE ÓPTICO USB,PRETO,400,"99.90","69.90",30,MOUSE,FALSE,PRETO:200|CINZA:200
+MO-102,MOUSE SEM FIO 2.4G,PRETO,300,"129.90","129.90",0,MOUSE,FALSE,PRETO:150|CINZA:150
+MO-103,MOUSE GAMER USB,PRETO,250,"249.90","249.90",0,MOUSE,TRUE,
+MO-104,MOUSE SEM FIO RECARREGÁVEL,PRETO,200,"139.90","139.90",0,MOUSE,FALSE,PRETO:100|CINZA:100
+TC-101,TECLADO USB PADRÃO ABNT2,PRETO,200,"139.90","109.90",21,TECLADO,FALSE,
+TC-102,TECLADO GAMER LED RGB,PRETO,150,"299.90","299.90",0,TECLADO,TRUE,
+FO-101,FONE DE OUVIDO COM MICROFONE,PRETO,180,"169.90","139.90",18,FONE,FALSE,PRETO:60|AZUL:60|BRANCO:60
+AC-401,MOUSE PAD BÁSICO,PRETO,600,"39.90","29.90",25,MOUSE PAD,FALSE,PRETO:300|VERMELHO:300
 ```
 
 ---
