@@ -13,7 +13,7 @@ An automated AI workflow built with n8n to process complex PDF catalogs using GP
   <sub><em>n8n Workflow</em></sub>
 </p>
 
-## 📖 The Story & The Problem
+## 📖 The Story & Problem
 
 Imagine running a high-volume e-commerce operation, selling electronics on multiple marketplaces like Mercado Livre and Shopee. Your success depends on buying the right products at the right time.
 
@@ -43,6 +43,7 @@ This process takes hours, is highly prone to human error, and delays purchasing 
 CataPedido acts as a simplified ERP operated 100% via Telegram, focused on preventing losses and accelerating decision-making in E-commerce. Its functions are divided into 4 main pillars:
 
 ### 📦 1. Catalog Intelligence (OCR & Pricing)
+*   **OCR(Optical Character Recognition) - OCR is a technology that converts images of text—like scanned documents, photos, or PDFs into editable, searchable, and machine-readable text.
 *   **GPT-4 Vision Extraction:** Reads supplier PDFs and converts complex images (including "out of stock" stamps and crossed-out prices) into structured data.
 *   **Dynamic Pricing:** Instantly calculates the minimum selling price by combining the supplier's cost with the specific commission rates and taxes of each platform (Mercado Livre, Shopee, etc.).
 *   **Opportunity Ranking:** Generates reports highlighting SKUs with the highest discount % and the best Return on Investment (ROI).
@@ -56,16 +57,22 @@ CataPedido acts as a simplified ERP operated 100% via Telegram, focused on preve
 *   **Critical Alerts (≤ 5 units):** Displays SKUs about to run out of stock and provides an interactive button to *"Generate Purchase Draft"*.
 *   **Stockouts:** Identifies SKUs with zero stock and offers an *"Emergency Pause"* option with one click.
 
-### 📡 4. Radar Mode (Ad Auditing)
-A proactive logic layer that cross-references physical inventory with online ads:
+### 📡 4. Radar Mode (Ad Auditing) - [Work in Progress]
+ By fully implementing the autonomous "Radar Mode" to run 24/7 alongside the catalog OCR extraction, this architecture is projected to deliver the following business results:
 *   **Margin Risk:** Identifies and alerts about active ads that are running with a negative margin (causing financial loss).
 *   **Integration Audit:** Cross-references databases to find products that have physical stock but were forgotten and are not advertised online.
 *   **Paused with Stock:** Finds ads that are paused (e.g., due to a past stockout), cross-references them with the current balance, and provides a button to *Reactivate All*.
 *   **Block Filters:** Lists ads that have suffered violations, errors, or platform blocks.
 
+<p align="center">
+  <img src="./images/demo-catapedido.gif" width="360" alt="CataPedido on Telegram" />
+  <br>
+  <sub><em>Product Sheet</em></sub>
+</p>
+
 ---
 
-## 📈 Business Impact & ROI
+## 📈 Projected Business Impact & ROI
 
 By keeping the autonomous "Radar Mode" active 24/7 and automating the catalog OCR extraction, this architecture delivers measurable business results:
 
